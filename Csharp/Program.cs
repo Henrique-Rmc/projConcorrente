@@ -24,7 +24,7 @@ public class TaskRunner
 {
     public static async Task RunTasksAsync(int numTasks)
     {
-        List<Task> tasks = new List<Task>(1000000);
+        List<Task> tasks = new List<Task>(numTasks);
         for (int i = 0; i < numTasks; i++)
         {
             Task task = Task.Run(async () =>

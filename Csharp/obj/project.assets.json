@@ -835,19 +835,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gabiq\\.nuget\\packages\\": {}
+    "C:\\Users\\henri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\VsCodeGit\\projConcorrente\\Csharp\\Csharp.csproj",
+      "projectUniqueName": "E:\\VsCode\\projConcorrente\\Csharp\\Csharp.csproj",
       "projectName": "Csharp",
-      "projectPath": "C:\\VsCodeGit\\projConcorrente\\Csharp\\Csharp.csproj",
-      "packagesPath": "C:\\Users\\gabiq\\.nuget\\packages\\",
-      "outputPath": "C:\\VsCodeGit\\projConcorrente\\Csharp\\obj\\",
+      "projectPath": "E:\\VsCode\\projConcorrente\\Csharp\\Csharp.csproj",
+      "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
+      "outputPath": "E:\\VsCode\\projConcorrente\\Csharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gabiq\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\henri\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
