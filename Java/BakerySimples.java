@@ -66,10 +66,12 @@ class BakeryLock {
         choosing[threadId] = false;
 
         for (int i = 0; i < numThreads; i++) {
-            while (choosing[i]) { /* Aguarde a outra thread escolher. */}
+            while (choosing[i]) { 
+                Thread.yield();/* Aguarde a outra thread escolher. */
+            }
 
             while ((number[i] != 0) && ((number[i] < number[threadId]) || ((number[i] == number[threadId]) && (i < threadId)))) {
-                /*  Espere até que a thread atual seja a próxima na fila. */
+                Thread.yield();/*  Espere até que a thread atual seja a próxima na fila. */
             }
         }
     }
