@@ -33,8 +33,10 @@ threads = []
 def thread_function(thread_id):
     global global_counter
     bakery_lock.lock(thread_id)
+    # Região Crítica Inicio
     print(thread_id)
-    global_counter += 1  # Região Crítica
+    global_counter += 1  
+    # Região Crítica Fim
     bakery_lock.unlock(thread_id)
 
 

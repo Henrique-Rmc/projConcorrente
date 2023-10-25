@@ -3,9 +3,11 @@ package Java;
 public class BakerySimples {
 
     private static int globalCounter = 0;
-    private static final int NUM_THREADS = 100;
+    private static int NUM_THREADS;
     //private static final int NUM_ITERATIONS = 1000;
     public static void main(String[] args) {
+        NUM_THREADS = Integer.parseInt(args[0]);
+
         BakeryLock bakeryLock = new BakeryLock(NUM_THREADS);
         Thread[] threads = new Thread[NUM_THREADS];
 

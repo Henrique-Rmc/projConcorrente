@@ -5,8 +5,10 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class BakeryAtomic {
     private static int globalCounter = 0;
-    private static final int NUM_THREADS = 100;
+    private static int NUM_THREADS;
     public static void main(String[] args) {
+        NUM_THREADS = 100;//Integer.parseInt(args[0]);
+
         BakeryLock bakeryLock = new BakeryLock(NUM_THREADS);
         Thread[] threads = new Thread[NUM_THREADS];
 
@@ -50,12 +52,13 @@ class BakeryLock {
 
     public BakeryLock(int numThreads) {
         this.numThreads = numThreads;
-        choosing = new AtomicIntegerArray(numThreads);
+        choosing = new AtomicIntegerArray(numThreads); // 0:False | 1:True
         number = new AtomicIntegerArray(numThreads) ;
     
     }
 
     public void lock(int threadId) {
+        //Choosing ticket
         choosing.set(threadId, 1);
         int maxNumber = 0;
         for (int i = 0; i < numThreads; i++) {
@@ -66,17 +69,18 @@ class BakeryLock {
         number.set(threadId, maxNumber+1);
         choosing.set(threadId, 0);
 
-        for (int i = 0; i < numThreads; i++) {
-            while (choosing.get(i)==1) { 
+        //Verificação
+        for (int i2 = 0; i2 < numThreads; i2++) {
+            while (choosing.get(i2)==1) { 
                 Thread.yield();/* Aguarde a outra thread escolher. */}
 
-            while ((number.get(i)==0) && ((number.get(i) < number.get(threadId)) || ((number.get(i) == number.get(threadId)) && (i < threadId)))) {
+            while ((number.get(i2)!=0) && ((number.get(i2) < number.get(threadId)) || ((number.get(i2) == number.get(threadId)) && (i2 < threadId)))) {
                 Thread.yield();/*  Espere até que a thread atual seja a próxima na fila. */
             }
-        }
+        } 
     }
 
     public void unlock(int threadId) {
-        number.getAndSet(threadId, 0);
+        number.set(threadId, 0);
     }
 }
