@@ -7,7 +7,7 @@ public class BakeryAtomic {
     private static int globalCounter = 0;
     private static int NUM_THREADS;
     public static void main(String[] args) {
-        NUM_THREADS = 100;//Integer.parseInt(args[0]);
+        NUM_THREADS = Integer.parseInt(args[0]);
 
         BakeryLock bakeryLock = new BakeryLock(NUM_THREADS);
         Thread[] threads = new Thread[NUM_THREADS];
