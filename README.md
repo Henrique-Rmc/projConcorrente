@@ -46,7 +46,8 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 : 0.4770935260000001,
          
 +Valor médio com 1024 threas
-: 0.511285706,
+: 0.511285706
+
 ![javaBakeryR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/d7da4caa-d750-4fc5-acb7-398dc8b07d7f)
 
 ## Bakery no Pentium Gold
@@ -78,7 +79,8 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 : 0.8039463580000001,
          
 +Valor médio com 1024 threas
-: 1.094666898,
+: 1.094666898
+
 ![javaBakery](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/ab3a6929-a8c9-4c2d-ad88-0502eb4e04b8)
 
 # Bakery Atomic
@@ -120,7 +122,9 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 ![javaAtomicR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/be4e20a2-01b8-4b16-a74f-2ff6694d8836)
 
 ## Bakery Atomic CPU Pentium Gold
+
 [Link para os resultados Bakery Atomic Pentium Gold](Scripts/output/PentiumGold7505/javaAtomic.json)
+
 +Valor médio com 2 threas
 : 0.74649817
        
@@ -156,6 +160,7 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 # TAS
 
 ## TAS CPU 5700
+
 [Link para os resultados TAS Pentium Gold](Scripts/output/Ryzen5700g/javaTas.json)
 
 +Valor médio com 2 threas
@@ -191,6 +196,7 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 ![javaTasR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/ffec94bb-d65d-4720-8622-bd30bca16c00)
 
 ## TAS CPU Pentium Gold
+
 [Link para os resultados TAS Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
 
 +Valor médio com 2 threas
@@ -227,6 +233,7 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 
 #TTAS
 ## TTAS CPU 5700
+
 [Link para os resultados TTAS Pentium Gold](Scripts/output/Ryzen5700g/javaTtas.json)
 
 +Valor médio com 2 threas
@@ -262,6 +269,7 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 ![javaTtasR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/33955d81-d4dc-4626-8550-055f34e56d2f)
 
 ## TTAS CPU Pentium Gold
+
 [Link para os resultados TTAS Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
 
 +Valor médio com 2 threas
