@@ -83,6 +83,8 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 
 # Bakery Atomic
 ## Bakery Atomic CPU R5700
+Link para os resultados:
+### Scripts/output/javaAtomic.json
 ![javaAtomicR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/be4e20a2-01b8-4b16-a74f-2ff6694d8836)
 
 ## Bakery Atomic CPU Pentium Gold
