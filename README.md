@@ -1,7 +1,9 @@
 # Projeto de Concorrente
+Alunos: 
 
+Guilherme de Senna Fernandes 
+Paulo Henrique Ribeiro Medeiros Cruz
 
-Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execução serão criados na pasta ./Output
 
 # Método
 Este trabalho constitui um estudo dedicado à análise de desempenho do algoritmo de Bakery, Bakery Atomic, Tas e Ttas em cenários variados. Nossa análise abordará o funcionamento do algoritmo em situações de baixa carga, caracterizadas por um número limitado de threads concorrentes, bem como em situações de alta carga, com um grande número de threads atuando simultaneamente. Além disso, iremos explorar diferentes ambientes de trabalho, incluindo um sistema com CPU de alto desempenho, com 8 núcleos e 16 threads(Ryzen 5700g), e outro com uma CPU que possui 2 núcleos e 4 threads(Intel Pentium Gold 7505), caracterizada por um desempenho inferior.
@@ -18,6 +20,9 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 
 
 ## Bakery CPU R5700g
+
+[Link para os resultados Bakery Ryzen7](Scripts/output/Ryzen5700g/javaBakery.json)
+
 +Valor médio com 2 threas
 : 0.41191008599999995
        
@@ -51,6 +56,9 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 ![javaBakeryR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/d7da4caa-d750-4fc5-acb7-398dc8b07d7f)
 
 ## Bakery no Pentium Gold
+
+[Link para os resultados Bakery Pentium Gold](Scripts/output/PentiumGold7505/javaBakery.jsonn)
+
 +Valor médio com 2 threas
 : 0.685290708
        
@@ -306,8 +314,10 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 
 # Análise de Resultados Ryzen 5700
 Para um pequeno número de threads (2, 4, 8), o Bakery Lock é o mais rápido.
-Conforme o número de threads aumenta, o Bakery Lock mantém sua eficiência, enquanto o Bakery Atomic começa a ficar mais lento.
-O TTAS e o TAS também têm tempos razoáveis, mas ficam em algum lugar entre o Bakery Lock e o Bakery Atomic.
+
+Conforme o número de threads aumenta, o Bakery Lock mantém sua eficiência, enquanto o Bakery Atomic começa a ficar mais lento. Indicando que a complexidade desses algoritmos pode ser uma desvantagem em sistemas mais poderosos.
+
+O TTAS e o TAS apresentam tempos de execução consistentemente curtos em uma ampla faixa de concorrência, de 2 a 1024 threads.
 
 # Análise de Resultados Pentium Gold
 Para um pequeno número de threads (2, 4, 8), o TTAS é o mais rápido.
@@ -318,7 +328,13 @@ O Bakery apresenta os tempos mais altos, especialmente à medida que o número d
 
 A diferença mais notável entre os resultados é a queda significativa no tempo de execução dos algoritmos no processador Ryzen 7 com mais núcleos e threads em comparação com o Pentium Gold. Isso se deve à capacidade de paralelização dos algoritmos em sistemas com mais threads disponíveis. Quando há mais threads, os algoritmos de exclusão mútua podem escalonar melhor e competir de maneira mais eficaz pela CPU.
 
-No caso dos algoritmos TTAS, TAS e Bakery Atomic, que são mais eficientes, o ganho de desempenho é evidente à medida que o número de threads aumenta. Isso ocorre porque esses algoritmos têm menos contenção de exclusão mútua e podem aproveitar melhor os núcleos disponíveis.
+## Conclusão
 
-Por outro lado, o algoritmo Bakery tem um desempenho menos eficiente nos cenários com mais threads. Isso pode ser devido à natureza mais complexa desse algoritmo, que envolve várias fases de escolha e seleção de threads para acesso à região crítica. Essa complexidade pode levar a mais contenção e concorrência nos cenários com um grande número de threads, resultando em tempos de execução mais longos.
+O desempenho dos algoritmos de exclusão mútua é fortemente influenciado pela configuração do hardware.
+
+Sistemas com mais núcleos e threads têm uma vantagem clara no gerenciamento de concorrência e, portanto, algoritmos mais simples, como TTAS e TAS, tendem a se destacar nesses cenários.
+
+O aumento na quantidade de threads beneficia significativamente o desempenho do TTAS e TAS, tornando-os escolhas sólidas para sistemas com alta concorrência.
+
+Algoritmos mais complexos, como Bakery e Bakery Atomic, podem ser menos eficazes em sistemas com um grande número de threads, uma vez que a complexidade desses algoritmos pode começar a afetar negativamente o desempenho.
 
