@@ -4,12 +4,12 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
 
 
 public class BakeryAtomic {
-    private static int globalCounter = 0;
+    //private static int globalCounter = 0;
     private static int NUM_THREADS;
     public static void main(String[] args) {
         NUM_THREADS = Integer.parseInt(args[0]);
 
-        BakeryLock bakeryLock = new BakeryLock(NUM_THREADS);
+        BakeryAtomicLock bakeryLock = new BakeryAtomicLock(NUM_THREADS);
         Thread[] threads = new Thread[NUM_THREADS];
 
         for (int i = 0; i < NUM_THREADS; i++) {
@@ -18,8 +18,8 @@ public class BakeryAtomic {
                     System.out.println(threadId);
                     bakeryLock.lock(threadId);
                     //Região Crítica
-                    System.out.println(threadId);
-                    globalCounter++;
+                    //System.out.println(threadId);
+                    //globalCounter++;
                     //Fim Região Crítica
                     bakeryLock.unlock(threadId);
             });
@@ -36,21 +36,20 @@ public class BakeryAtomic {
                 e.printStackTrace();
             }
         }
-
-        System.out.println("Shared Counter: " + globalCounter);
+        //System.out.println("Shared Counter: " + globalCounter);
     }
 }
 
 
 
-class BakeryLock {
+class BakeryAtomicLock {
     
     private AtomicIntegerArray choosing;
     private AtomicIntegerArray number;
     private int numThreads;
 
 
-    public BakeryLock(int numThreads) {
+    public BakeryAtomicLock(int numThreads) {
         this.numThreads = numThreads;
         choosing = new AtomicIntegerArray(numThreads); // 0:False | 1:True
         number = new AtomicIntegerArray(numThreads) ;

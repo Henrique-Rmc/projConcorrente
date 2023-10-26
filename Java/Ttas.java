@@ -3,7 +3,7 @@ package Java;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Ttas {
-    private static int globalCounter = 0;
+    //private static int globalCounter = 0;
     private static int NUM_THREADS;
 
     public static void main(String[] args) {
@@ -13,12 +13,12 @@ public class Ttas {
         Thread[] threads = new Thread[NUM_THREADS];
 
         for (int i = 0; i < NUM_THREADS; i++) {
-            final int threadId = i;
+            //final int threadId = i;
             threads[i] = new Thread(() -> {
-                    System.out.println(threadId);
+                    //System.out.println(threadId);
                     ttasLock.lock();
                     //Região Crítica
-                    globalCounter++;
+                    //globalCounter++;
                     //Fim Região Crítica
                     ttasLock.unlock();
             });
@@ -36,7 +36,7 @@ public class Ttas {
             }
         }
 
-        System.out.println("Shared Counter: " + globalCounter);
+        //System.out.println("Shared Counter: " + globalCounter);
     }
 }
 

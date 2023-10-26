@@ -2,7 +2,7 @@ package Java;
 
 public class BakerySimples {
 
-    private static int globalCounter = 0;
+    //private static int globalCounter = 0;
     private static int NUM_THREADS;
     //private static final int NUM_ITERATIONS = 1000;
     public static void main(String[] args) {
@@ -14,10 +14,10 @@ public class BakerySimples {
         for (int i = 0; i < NUM_THREADS; i++) {
             final int threadId = i;
             threads[i] = new Thread(() -> {
-                    System.out.println(threadId);
+                    //System.out.println(threadId);
                     bakeryLock.lock(threadId);
                     //Região Crítica
-                    globalCounter++;
+                    //globalCounter++;
                     //Fim Região Crítica
                     bakeryLock.unlock(threadId);
             });
@@ -35,7 +35,7 @@ public class BakerySimples {
             }
         }
 
-        System.out.println("Shared Counter: " + globalCounter);
+        //System.out.println("Shared Counter: " + globalCounter);
     }
 }
 
