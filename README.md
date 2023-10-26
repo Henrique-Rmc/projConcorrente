@@ -303,3 +303,22 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 : 0.9040042900000002,
 
 ![javaTtas](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/ffc94fcf-a367-4aaf-9a63-9575139e05c3)
+
+# Análise de Resultados Ryzen 5700
+Para um pequeno número de threads (2, 4, 8), o Bakery Lock é o mais rápido.
+Conforme o número de threads aumenta, o Bakery Lock mantém sua eficiência, enquanto o Bakery Atomic começa a ficar mais lento.
+O TTAS e o TAS também têm tempos razoáveis, mas ficam em algum lugar entre o Bakery Lock e o Bakery Atomic.
+
+# Análise de Resultados Pentium Gold
+Para um pequeno número de threads (2, 4, 8), o TTAS é o mais rápido.
+Conforme o número de threads aumenta, o Bakery Atomic e o TAS também têm bons desempenhos, mas o TTAS permanece competitivo.
+O Bakery apresenta os tempos mais altos, especialmente à medida que o número de threads aumenta.
+
+# Análise de Resultados Ryzen 7 vs Pentium Gold
+
+A diferença mais notável entre os resultados é a queda significativa no tempo de execução dos algoritmos no processador Ryzen 7 com mais núcleos e threads em comparação com o Pentium Gold. Isso se deve à capacidade de paralelização dos algoritmos em sistemas com mais threads disponíveis. Quando há mais threads, os algoritmos de exclusão mútua podem escalonar melhor e competir de maneira mais eficaz pela CPU.
+
+No caso dos algoritmos TTAS, TAS e Bakery Atomic, que são mais eficientes, o ganho de desempenho é evidente à medida que o número de threads aumenta. Isso ocorre porque esses algoritmos têm menos contenção de exclusão mútua e podem aproveitar melhor os núcleos disponíveis.
+
+Por outro lado, o algoritmo Bakery tem um desempenho menos eficiente nos cenários com mais threads. Isso pode ser devido à natureza mais complexa desse algoritmo, que envolve várias fases de escolha e seleção de threads para acesso à região crítica. Essa complexidade pode levar a mais contenção e concorrência nos cenários com um grande número de threads, resultando em tempos de execução mais longos.
+
