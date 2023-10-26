@@ -96,18 +96,18 @@ Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execuçã
 # TAS
 
 ## TAS CPU 5700
-[Link para os resultados Bakery Atomic Pentium Gold](Scripts/output/Ryzen5700g/javaTas.json)
+[Link para os resultados TAS Pentium Gold](Scripts/output/Ryzen5700g/javaTas.json)
 ![javaTasR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/ffec94bb-d65d-4720-8622-bd30bca16c00)
 
 ## TAS CPU Pentium Gold
-[Link para os resultados Bakery Atomic Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
+[Link para os resultados TAS Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
 ![javaTas](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/099fa78b-5b94-40a1-a1b1-d8d5cbf8d451)
 
 #TTAS
 ## TTAS CPU 5700
-[Link para os resultados Bakery Atomic Pentium Gold](Scripts/output/Ryzen5700g/javaTtas.json)
+[Link para os resultados TTAS Pentium Gold](Scripts/output/Ryzen5700g/javaTtas.json)
 ![javaTtasR75700](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/33955d81-d4dc-4626-8550-055f34e56d2f)
 
 ## TTAS CPU Pentium Gold
-[Link para os resultados Bakery Atomic Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
+[Link para os resultados TTAS Pentium Gold](Scripts/output/PentiumGold7505/javaTas.json)
 ![javaTtas](https://github.com/Henrique-Rmc/projConcorrente/assets/49095666/ffc94fcf-a367-4aaf-9a63-9575139e05c3)
