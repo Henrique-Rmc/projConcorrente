@@ -6,12 +6,13 @@ Paulo Henrique Ribeiro Medeiros Cruz
 
 
 # Método
-Este trabalho constitui um estudo dedicado à análise de desempenho do algoritmo de Bakery, Bakery Atomic, Tas e Ttas em cenários variados. Nossa análise abordará o funcionamento do algoritmo em situações de baixa carga, caracterizadas por um número limitado de threads concorrentes, bem como em situações de alta carga, com um grande número de threads atuando simultaneamente. Além disso, iremos explorar diferentes ambientes de trabalho, incluindo um sistema com CPU de alto desempenho, com 8 núcleos e 16 threads(Ryzen 5700g), e outro com uma CPU que possui 2 núcleos e 4 threads(Intel Pentium Gold 7505), caracterizada por um desempenho inferior.
+Este trabalho constitui um estudo dedicado à análise de desempenho do algoritmo de Bakery, Bakery Atomic, Tas e Ttas em cenários variados na linguagem JAVA. Nossa análise abordará o funcionamento do algoritmo em situações de baixa carga, caracterizadas por um número limitado de threads concorrentes, bem como em situações de alta carga, com um grande número de threads atuando simultaneamente. Além disso, iremos explorar diferentes ambientes de trabalho, incluindo um sistema com CPU de alto desempenho, com 8 núcleos e 16 threads(Ryzen 5700g), e outro com uma CPU que possui 2 núcleos e 4 threads(Intel Pentium Gold 7505), caracterizada por um desempenho inferior.
 
 # Ferramenta
-Usamos da ferramenta HyperFine para gerar nossos resultados. Essa ferramenta gera uma quantidade n de testes de um determiado programa e cria uma média que representa o valor mais próximo possível do que seria o tempo de execução.Foram executados 10 testes para cada medição de thread
+Usamos da ferramenta HyperFine para calcular nossos resultados. Essa ferramenta roda uma quantidade n de testes de um determiado programa e cria uma média que representa o valor mais próximo possível do que seria o tempo de execução.Foram executados 10 testes para cada medição de thread.
 
 # Execução:
+Foram Criados Scripts para automatizar a geração dos testes. Eles podem ser rodados pelo comando abaixo.
 Ao rodar Graficos.ps1 (na pasta ./Scripts) Graficos de Tempo Médio de Execução serão criados na pasta ./Output
 ``` Scripts> & .\Grafico.ps1 ```
 
